@@ -39,8 +39,8 @@ def wheat_seed_summary():
     y_predict = ["Type"]
     X_df = pd.read_csv('../data/wheatseed.csv', usecols=features)
     y_df = pd.read_csv('../data/wheatseed.csv', usecols=y_predict)
-    X1 = np.array(X_df.as_matrix())
-    y1 = np.squeeze(np.array(y_df.as_matrix()))
+    X1 = np.array(X_df.to_numpy())
+    y1 = np.squeeze(np.array(y_df.to_numpy()))
     summary = LinguisticSummary(X1, y1, 3, len(features))
     summary.linguistic_summary()
 
